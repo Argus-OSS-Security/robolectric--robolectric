@@ -1,16 +1,17 @@
 name: Check Code Style
 
-on:
-  push:
-    branches: [ master, 'robolectric-*.x' ]
-    paths-ignore:
-      - '**.md'
-
-  pull_request:
-    branches: [ master, google ]
-    paths-ignore:
-      - '**.md'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [ master, 'robolectric-*.x' ]
+#     paths-ignore:
+#       - '**.md'
+# 
+#   pull_request:
+#     branches: [ master, google ]
+#     paths-ignore:
+#       - '**.md'
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

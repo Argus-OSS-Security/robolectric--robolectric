@@ -1,12 +1,13 @@
 name: Copybara tests
 
-on:
-  push:
-    branches: [ google ]
-
-  pull_request:
-    branches: [ google ]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [ google ]
+# 
+#   pull_request:
+#     branches: [ google ]
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

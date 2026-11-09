@@ -1,9 +1,10 @@
 name: Validate commit message
 
-on:
-  pull_request:
-    branches: [ master, google ]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     branches: [ master, google ]
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

@@ -12,23 +12,24 @@
 
 name: Cherry-pick
 
-on:
-  workflow_dispatch:
-    inputs:
-      commits:
-        description: 'Commit SHAs and/or PR numbers to cherry-pick, oldest first, e.g. "#11619 1a2b3c4"'
-        required: true
-        type: string
-      branch:
-        description: 'Release branch to cherry-pick into (default: the newest robolectric-X.Y.x)'
-        required: false
-        type: string
-
-  # Only git commands run on the merged commits; no code from the PR is built or run.
-  pull_request_target:
-    types: [ closed, labeled ]
-    branches: [ master ]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       commits:
+#         description: 'Commit SHAs and/or PR numbers to cherry-pick, oldest first, e.g. "#11619 1a2b3c4"'
+#         required: true
+#         type: string
+#       branch:
+#         description: 'Release branch to cherry-pick into (default: the newest robolectric-X.Y.x)'
+#         required: false
+#         type: string
+# 
+#   # Only git commands run on the merged commits; no code from the PR is built or run.
+#   pull_request_target:
+#     types: [ closed, labeled ]
+#     branches: [ master ]
+# 
 concurrency:
   group: cherry-pick
   cancel-in-progress: false

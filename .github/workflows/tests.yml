@@ -1,24 +1,25 @@
 name: Tests
 
-on:
-  push:
-    branches: [ master, 'robolectric-*.x', 'google' ]
-    paths-ignore:
-      - '**.md'
-
-  pull_request:
-    branches: [ master ]
-    paths-ignore:
-      - '**.md'
-
-  # Run by the release workflow.
-  workflow_call:
-    inputs:
-      ref:
-        description: 'The commit to test'
-        type: string
-        required: true
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [ master, 'robolectric-*.x', 'google' ]
+#     paths-ignore:
+#       - '**.md'
+# 
+#   pull_request:
+#     branches: [ master ]
+#     paths-ignore:
+#       - '**.md'
+# 
+#   # Run by the release workflow.
+#   workflow_call:
+#     inputs:
+#       ref:
+#         description: 'The commit to test'
+#         type: string
+#         required: true
+# 
 concurrency:
   # When called by another workflow, github.workflow is the caller's name.
   group: tests-${{ github.workflow }}-${{ github.ref }}

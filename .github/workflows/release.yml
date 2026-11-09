@@ -42,26 +42,27 @@
 
 name: Release
 
-on:
-  workflow_dispatch:
-    inputs:
-      release:
-        description: 'What to release'
-        type: choice
-        options:
-          - Point release
-          - Point release from a branch
-          - New release line
-        default: Point release
-      branch:
-        description: 'For "Point release from a branch": the release branch, such as robolectric-4.17.x.'
-        type: string
-        default: ''
-      beta:
-        description: 'Release a beta (X.Y-beta-N) instead of X.Y. Ignored for patch releases.'
-        type: boolean
-        default: false
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       release:
+#         description: 'What to release'
+#         type: choice
+#         options:
+#           - Point release
+#           - Point release from a branch
+#           - New release line
+#         default: Point release
+#       branch:
+#         description: 'For "Point release from a branch": the release branch, such as robolectric-4.17.x.'
+#         type: string
+#         default: ''
+#       beta:
+#         description: 'Release a beta (X.Y-beta-N) instead of X.Y. Ignored for patch releases.'
+#         type: boolean
+#         default: false
+# 
 concurrency:
   group: release
   cancel-in-progress: false
